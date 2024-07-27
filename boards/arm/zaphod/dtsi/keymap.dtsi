@@ -1,0 +1,39 @@
+compatible = "zmk,keymap";
+
+#define t___ &trans
+#define LAYER(NAME, BINDINGS) \
+  layer_##NAME { \
+    display-name = "NAME"; \
+    bindings = <BINDINGS>; \
+  }
+
+LAYER(base,
+    &kp Q          &kp W          &kp E          &kp R          &kp T          &kp Y          &kp U          &kp I          &kp O          &kp P
+    &kp A          &kp S          &kp D          &kp F          &kp G          &kp H          &kp J          &kp K          &kp L          &kp SEMI
+    &lhm LGUI Z    &lhm LALT X    &lhm LSHFT C   &lhm LCTRL V   &kp B          &kp N          &rhm RCTRL M   &rhm RSHFT COMMA &rhm RALT DOT &rhm RGUI FSLH
+                                                 &mt LSHFT ESC  &lt NUM_L BSPC &lt NAV_L SPACE &mt RSHFT RET
+);
+
+LAYER(num,
+    &kp F9         &kp F10        &kp F11        &kp F12        t___           &kp BSPC       &kp N7         &kp N8         &kp N9         &kp N0
+    &kp F5         &kp F6         &kp F7         &kp F8         t___           &kp DOT        &kp N4         &kp N5         &kp N6         t___
+    &kp F1         &kp F2         &kp F3         &kp F4         &kp DEL        &kp COMMA      &kp N1         &kp N2         &kp N3         t___
+                                                 t___           t___           t___           t___
+);
+
+LAYER(nav,
+    t___           t___           &mmv MOVE_UP   &msc SCRL_UP   t___           t___           &mkp LCLK      &mkp MCLK      &mkp RCLK      t___   
+    t___           &mmv MOVE_LEFT t___           &mmv MOVE_RIGHT t___          &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      t___   
+    t___           t___           &mmv MOVE_DOWN &msc SCRL_DOWN t___           &kp HOME       &kp PG_DN      &kp PG_UP      &kp END        t___   
+                                                 t___           t___           t___           t___
+);
+
+LAYER(kbd,
+    t___           &sys_reset     &out OUT_TOG   &bt BT_CLR     &bootloader    &bootloader    t___           t___           &sys_reset     t___
+    t___           &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   t___           t___           t___           t___           t___
+    t___           t___           t___           t___           t___           t___           t___           t___           t___           t___
+                                                 t___           t___           t___           t___
+);
+
+#undef LAYER
+#undef t___

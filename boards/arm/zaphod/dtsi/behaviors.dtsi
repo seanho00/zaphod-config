@@ -1,0 +1,23 @@
+#define HRM(NAME, HOLD_TRIG) \
+  NAME: hrm_##NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    bindings = <&kp>, <&kp>; \
+    flavor = "tap-preferred"; \
+    tapping-term-ms = <150>; \
+    quick-tap-ms = <100>; \
+    global-quick-tap; \
+    hold-trigger-key-positions = <HOLD_TRIG>; \
+  }
+
+#define L_MODS 20 21 22 23 
+#define R_MODS 26 27 28 29
+#define THUMBS 30 31 32 33
+
+HRM(lhm, 5  6  7  8  9 15 16 17 18 19 L_MODS 25 R_MODS THUMBS);
+HRM(rhm, 0  1  2  3  4 10 11 12 13 14 L_MODS 24 R_MODS THUMBS);
+
+#undef HRM
+#undef L_MODS
+#undef R_MODS
+#undef THUMBS
