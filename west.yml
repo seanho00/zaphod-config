@@ -1,8 +1,10 @@
+# PR2027: https://github.com/petejohanson/zmk:feat/pointers-move-scroll
+# bravekarma merge: https://github.com/caksoylar/zmk:caksoylar/experimental
 manifest:
   projects:
     - name: zmk
-      url: https://github.com/petejohanson/zmk
-      revision: feat/pointers-move-scroll
+      url: https://github.com/caksoylar/zmk
+      revision: caksoylar/experimental
       import: app/west.yml
       clone-depth: 1
   self:
