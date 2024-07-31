@@ -3,8 +3,8 @@
 manifest:
   projects:
     - name: zmk
-      url: https://github.com/caksoylar/zmk
-      revision: caksoylar/experimental
+      url: https://github.com/petejohanson/zmk
+      revision: feat/pointers-move-scroll
       import: app/west.yml
       clone-depth: 1
   self:
